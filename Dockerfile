@@ -17,5 +17,6 @@
 FROM zumbrunnen/base
 MAINTAINER phre phre@gmx.com
 
+RUN apt-get -y install python-pip
 RUN pip install supervisor-stdout
 ADD sv_stdout.conf /etc/supervisor/conf.d/
