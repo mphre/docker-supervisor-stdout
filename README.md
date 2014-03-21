@@ -14,3 +14,17 @@ Build your image using this as base, add supervisor configs to `/etc/supervisor/
     # install and setup your program
 
     ADD my_prog.conf /etc/supervisor/conf.d/
+
+To make use of the stdout output put:
+
+    stdout_events_enabled = true
+    stderr_events_enabled = true
+
+in the supervisor config snippet for the program you want to run, e.g.:
+
+    [program:test]
+    command = /test.sh
+    stdout_events_enabled = true
+    stderr_events_enabled = true
+
+See [supervisor-stdout](https://pypi.python.org/pypi/supervisor-stdout) package for more details.
